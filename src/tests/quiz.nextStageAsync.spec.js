@@ -80,7 +80,6 @@ describe('quiz.nextStageAsync()', function () {
         });
 
         it('should reject request if only one player', async function () {
-
             instanceBefore.players = [ {name: "Player 1"} ]; // One players
             await expect(quiz.nextStageAsync('1234')).to.eventually.be.rejectedWith('Not enough players yet');
             expect(saveInstance.notCalled).to.be.true;
